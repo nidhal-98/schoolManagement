@@ -23,4 +23,8 @@ public class Course {
     @OneToOne
     @JoinColumn(name = "teacher_id")
     Teacher teacher;
+
+    @ManyToOne
+    @JoinColumn(name = "class_id")
+    Class1 class1;
 }
