@@ -26,5 +26,4 @@ public class Student {
 
     @OneToMany(mappedBy = "Id")
     List<StudentCourse> studentCourses;
-
 }
