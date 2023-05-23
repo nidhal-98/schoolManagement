@@ -20,7 +20,4 @@ public class Student {
     String name;
     String gender;
     Integer age;
-
-
-
 }
