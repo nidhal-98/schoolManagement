@@ -3,6 +3,7 @@ package com.example.school.management.Models;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Setter
 @Getter
@@ -27,4 +28,7 @@ public class Course {
     @ManyToOne
     @JoinColumn(name = "class_id")
     Class1 class1;
+
+    @OneToMany(mappedBy = "Id")
+    List<StudentCourse> studentCourses;
 }
