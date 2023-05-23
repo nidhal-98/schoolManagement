@@ -36,6 +36,17 @@ public class StudentControllers {
     @GetMapping("/getAllStudents")
     public List<Student> getAllStudents(){
         return studentServices.getAllStudents();
+        /*
+        localhost:8080/api/students/getAllStudents
+         */
+    }
+
+    @GetMapping("{id}")
+    public Student getStudentById(@PathVariable("id") Long id){
+        return studentServices.getStudentById(id);
+        /*
+        localhost:8080/api/students/1
+         */
     }
 
 }
