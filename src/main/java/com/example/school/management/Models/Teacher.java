@@ -19,4 +19,8 @@ public class Teacher {
 
     String name;
     String specialization;
+
+    @OneToOne
+    @JoinColumn(name = "course_id")
+    Course course;
 }
