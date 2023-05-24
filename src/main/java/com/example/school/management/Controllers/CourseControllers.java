@@ -1,16 +1,13 @@
 package com.example.school.management.Controllers;
 
 import com.example.school.management.Models.Course;
-import com.example.school.management.Models.Teacher;
 import com.example.school.management.Services.CourseServices;
-import com.example.school.management.Services.TeacherServices;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @NoArgsConstructor
@@ -25,5 +22,21 @@ public class CourseControllers {
     public String registerCourse(@RequestBody Course course) {
         courseServices.registerCourse(course);
         return "Course is added";
+    }
+
+    @GetMapping("/getAllCourses")
+    public List<Course> getAllCourses(){
+        return courseServices.getAllCourses();
+        /*
+        localhost:8080/api/courses/getAllCourses
+         */
+    }
+
+    @GetMapping("/courseBy/{id}")
+    public Course getCourseById(@PathVariable("id") Long id){
+        return courseServices.getCourseById(id);
+        /*
+        localhost:8080/api/courses/1
+        */
     }
 }
