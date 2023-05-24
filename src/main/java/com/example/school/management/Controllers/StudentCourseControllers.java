@@ -28,4 +28,9 @@ public class StudentCourseControllers {
     public List<StudentCourse> getAllStudentCourses(){
         return studentCourseServices.getAllStudentCourse();
     }
+
+    @GetMapping("/StudentCourseBy/{id}")
+    public StudentCourse getStudentCourseById(@PathVariable("id") Long id){
+        return studentCourseServices.getStudentCourseById(id);
+    }
 }
