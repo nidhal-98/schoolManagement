@@ -21,6 +21,10 @@ public class TeacherServices {
         return teacherRepository.findById(id).get();
     }
 
+    public void deleteTeacherById(Long id){
+        teacherRepository.deleteById(id);
+    }
+
     public void registerTeacher(Teacher teacher){
         teacherRepository.save(teacher);
     }
