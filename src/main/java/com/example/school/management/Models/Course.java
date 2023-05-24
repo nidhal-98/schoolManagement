@@ -27,7 +27,7 @@ public class Course {
 
     @ManyToOne
     @JoinColumn(name = "class_id")
-    Class1 class1;
+    ClassRoom classRoom;
 
     @OneToMany(mappedBy = "Id")
     List<StudentCourse> studentCourses;

@@ -1,6 +1,7 @@
 package com.example.school.management.Services;
 
 import com.example.school.management.Models.Course;
+import com.example.school.management.Models.Student;
 import com.example.school.management.Repositories.CourseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,5 +24,9 @@ public class CourseServices {
 
     public void registerCourse(Course course){
         courseRepository.save(course);
+    }
+
+    public Course saveCourse(Course course){
+        return courseRepository.save(course);
     }
 }

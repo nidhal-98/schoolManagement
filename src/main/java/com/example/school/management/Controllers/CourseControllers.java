@@ -37,6 +37,18 @@ public class CourseControllers {
 
         return courseServices.getCourseById(id);
     }
+
+    @PutMapping("/updateCourse/{id}")
+    public String updateCourse(@PathVariable Long id, @RequestBody Course updatedCourse){
+
+        Course course = courseServices.getCourseById(id);
+        course.setName(updatedCourse.getName());
+        course.setDescription(updatedCourse.getDescription());
+
+        courseServices.saveCourse(course);
+
+        return "Updated Successfully";
+    }
 }
 
 
