@@ -55,4 +55,10 @@ public class StudentControllers {
         return "Updated Successfully";
     }
 
+    @DeleteMapping("/deleteStudent/{id}")
+    public String deleteStudent(@PathVariable Long id){
+
+        studentServices.deleteStudentById(id);
+        return "Deleted Successfully";
+    }
 }
