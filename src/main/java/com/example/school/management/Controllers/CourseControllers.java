@@ -34,9 +34,17 @@ public class CourseControllers {
 
     @GetMapping("/courseBy/{id}")
     public Course getCourseById(@PathVariable("id") Long id){
+
         return courseServices.getCourseById(id);
         /*
         localhost:8080/api/courses/1
         */
     }
 }
+
+
+/*
+git config --global user.name "nidhal-98"
+
+git config --global user.email "nidhalsalim98@gmail.com"
+*/
