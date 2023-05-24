@@ -48,4 +48,10 @@ public class TeacherControllers {
         return "Updated Successfully";
     }
 
+    @DeleteMapping("/deleteTeacher/{id}")
+    public String deleteTeacher(@PathVariable Long id){
+
+        teacherServices.deleteTeacherById(id);
+        return "Deleted Successfully";
+    }
 }
