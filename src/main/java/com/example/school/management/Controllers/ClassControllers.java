@@ -36,6 +36,16 @@ public class ClassControllers {
         return classServices.getClassById(id);
     }
 
+    @PutMapping("/updateClass/{id}")
+    public String updateClass(@PathVariable Long id, @RequestBody ClassRoom updatedClassRoom){
+
+        ClassRoom classRoom = classServices.getClassById(id);
+        classRoom.setSize(updatedClassRoom.getSize());
+
+        classServices.saveClass(classRoom);
+
+        return "Updated Successfully";
+    }
 
     @DeleteMapping("/deleteClass/{id}")
     public String deleteStudent(@PathVariable Long id){

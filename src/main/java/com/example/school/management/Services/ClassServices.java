@@ -30,5 +30,8 @@ public class ClassServices {
         classRepository.save(classRoom);
     }
 
+    public ClassRoom saveClass(ClassRoom classRoom){
+        return classRepository.save(classRoom);
+    }
 
 }
