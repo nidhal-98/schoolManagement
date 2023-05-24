@@ -6,10 +6,7 @@ import com.example.school.management.Services.TeacherServices;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -27,4 +24,15 @@ public class TeacherControllers {
         teacherServices.registerTeacher(teacher);
         return "Teacher is added";
     }
+
+    @GetMapping("/getAllTeachers")
+    public List<Teacher> getAllTeachers(){
+        return teacherServices.getAllTeachers();
+    }
+
+    @GetMapping("/teacherBy/{id}")
+    public Teacher getTeacherById(@PathVariable("id") Long id){
+        return teacherServices.getTeacherById(id);
+    }
+
 }

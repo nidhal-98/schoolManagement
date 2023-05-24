@@ -1,8 +1,6 @@
 package com.example.school.management.Controllers;
 
-import com.example.school.management.Models.Class1;
-import com.example.school.management.Models.Course;
-import com.example.school.management.Models.Teacher;
+import com.example.school.management.Models.ClassRoom;
 import com.example.school.management.Services.ClassServices;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -21,18 +19,18 @@ public class ClassControllers {
     ClassServices classServices;
 
     @PostMapping("/register")
-    public String registerClass(@RequestBody Class1 class1) {
-        classServices.registerClass(class1);
+    public String registerClass(@RequestBody ClassRoom classRoom) {
+        classServices.registerClass(classRoom);
         return "Class is added";
     }
 
     @GetMapping("/getAllClasses")
-    public List<Class1> getAllClasses(){
+    public List<ClassRoom> getAllClasses(){
         return classServices.getAllClass();
     }
 
     @GetMapping("/classBy/{id}")
-    public Class1 getClassById(@PathVariable("id") Long id){
+    public ClassRoom getClassById(@PathVariable("id") Long id){
 
         return classServices.getClassById(id);
     }
