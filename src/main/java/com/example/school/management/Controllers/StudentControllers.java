@@ -36,17 +36,23 @@ public class StudentControllers {
     @GetMapping("/getAllStudents")
     public List<Student> getAllStudents(){
         return studentServices.getAllStudents();
-        /*
-        localhost:8080/api/students/getAllStudents
-         */
     }
 
     @GetMapping("{id}")
     public Student getStudentById(@PathVariable("id") Long id){
         return studentServices.getStudentById(id);
-        /*
-        localhost:8080/api/students/1
-         */
+    }
+
+    @PutMapping("/updateStudent/{id}")
+    public String updateStudent(@PathVariable Long id, @RequestBody Student updatedStudent){
+
+        Student student = studentServices.getStudentById(id);
+        student.setName(updatedStudent.getName());
+        student.setAge(updatedStudent.getAge());
+        student.setGender(updatedStudent.getGender());
+        studentServices.saveStudent(student);
+
+        return "Updated Successfully";
     }
 
 }

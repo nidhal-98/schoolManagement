@@ -24,4 +24,8 @@ public class StudentServices {
     public void registerStudent(Student student) {
         studentRepository.save(student);
     }
+
+    public Student saveStudent(Student student){
+        return studentRepository.save(student);
+    }
 }
