@@ -24,4 +24,8 @@ public class TeacherServices {
     public void registerTeacher(Teacher teacher){
         teacherRepository.save(teacher);
     }
+
+    public Teacher saveTeacher(Teacher teacher){
+        return teacherRepository.save(teacher);
+    }
 }
