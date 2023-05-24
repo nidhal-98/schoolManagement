@@ -36,9 +36,6 @@ public class CourseControllers {
     public Course getCourseById(@PathVariable("id") Long id){
 
         return courseServices.getCourseById(id);
-        /*
-        localhost:8080/api/courses/1
-        */
     }
 }
 
