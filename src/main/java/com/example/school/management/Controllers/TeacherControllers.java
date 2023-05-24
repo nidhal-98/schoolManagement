@@ -35,4 +35,17 @@ public class TeacherControllers {
         return teacherServices.getTeacherById(id);
     }
 
+    @PutMapping("/updateTeacher/{id}")
+    public String updateTeacher(@PathVariable Long id, @RequestBody Teacher updatedTeacher){
+
+        Teacher teacher = teacherServices.getTeacherById(id);
+
+        teacher.setName(updatedTeacher.getName());
+        teacher.setSpecialization(updatedTeacher.getSpecialization());
+
+        teacherServices.saveTeacher(teacher);
+
+        return "Updated Successfully";
+    }
+
 }
