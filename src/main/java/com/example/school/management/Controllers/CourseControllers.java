@@ -49,6 +49,13 @@ public class CourseControllers {
 
         return "Updated Successfully";
     }
+
+    @DeleteMapping("/deleteCourse/{id}")
+    public String deleteCourse(@PathVariable Long id){
+
+        courseServices.deleteCourseById(id);
+        return "Deleted Successfully";
+    }
 }
 
 

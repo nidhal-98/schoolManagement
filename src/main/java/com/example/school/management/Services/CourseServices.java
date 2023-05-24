@@ -22,6 +22,10 @@ public class CourseServices {
         return courseRepository.findById(id).get();
     }
 
+    public void deleteCourseById(Long id){
+        courseRepository.deleteById(id);
+    }
+
     public void registerCourse(Course course){
         courseRepository.save(course);
     }
