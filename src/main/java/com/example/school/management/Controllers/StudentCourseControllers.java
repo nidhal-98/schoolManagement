@@ -24,7 +24,6 @@ public class StudentCourseControllers {
         return "Done";
     }
 
-
     @GetMapping("/getAllStudentCourses")
     public List<StudentCourse> getAllStudentCourses(){
         return studentCourseServices.getAllStudentCourse();
