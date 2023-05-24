@@ -1,6 +1,7 @@
 package com.example.school.management.Controllers;
 
 import com.example.school.management.Models.ClassRoom;
+import com.example.school.management.Models.Student;
 import com.example.school.management.Services.ClassServices;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -33,5 +34,13 @@ public class ClassControllers {
     public ClassRoom getClassById(@PathVariable("id") Long id){
 
         return classServices.getClassById(id);
+    }
+
+
+    @DeleteMapping("/deleteClass/{id}")
+    public String deleteStudent(@PathVariable Long id){
+
+        classServices.deleteClassById(id);
+        return "Deleted Successfully";
     }
 }

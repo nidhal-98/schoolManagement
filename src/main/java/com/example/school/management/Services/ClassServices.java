@@ -1,6 +1,7 @@
 package com.example.school.management.Services;
 
 import com.example.school.management.Models.ClassRoom;
+import com.example.school.management.Models.Student;
 import com.example.school.management.Repositories.ClassRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,7 +22,13 @@ public class ClassServices {
         return classRepository.findById(id).get();
     }
 
+    public void deleteClassById(Long id){
+        classRepository.deleteById(id);
+    }
+
     public void registerClass(ClassRoom classRoom){
         classRepository.save(classRoom);
     }
+
+
 }
