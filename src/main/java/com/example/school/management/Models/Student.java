@@ -14,7 +14,7 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "students")
-public class Student {
+public class Student extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,6 +26,6 @@ public class Student {
 
     String email;
 
-    @OneToMany(mappedBy = "Id")
+    @OneToMany(mappedBy = "student")
     List<StudentCourse> studentCourses;
 }
