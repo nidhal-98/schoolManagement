@@ -3,6 +3,7 @@ package com.example.school.management.Models;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -14,7 +15,7 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "students")
-public class Student extends BaseEntity {
+public class Student {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,6 +26,10 @@ public class Student extends BaseEntity {
     Integer age;
 
     String email;
+
+    Date createdDate;
+    Boolean isActive;
+    Date updatedDate;
 
     @OneToMany(mappedBy = "student")
     List<StudentCourse> studentCourses;

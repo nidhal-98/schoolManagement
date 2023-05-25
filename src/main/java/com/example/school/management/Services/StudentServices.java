@@ -17,6 +17,10 @@ public class StudentServices {
         return studentRepository.findAll();
     }
 
+    /*public List<Student> getAllStudentsActive(){
+        return studentRepository.findAllByisActive(true);
+    }*/
+
     public Student getStudentById(Long id){
         return studentRepository.findById(id).get();
     }
