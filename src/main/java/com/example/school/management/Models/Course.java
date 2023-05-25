@@ -31,6 +31,6 @@ public class Course {
     @JoinColumn(name = "class_id")
     ClassRoom classRoom;
 
-    @OneToMany(mappedBy = "Id")
+    @OneToMany(mappedBy = "course")
     List<StudentCourse> studentCourses;
 }

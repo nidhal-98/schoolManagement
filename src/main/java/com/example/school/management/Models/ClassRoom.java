@@ -22,6 +22,6 @@ public class ClassRoom {
 
     String classCode;
 
-    @OneToMany(mappedBy = "courseID")
+    @OneToMany(mappedBy = "classRoom")
     List<Course> courses;
 }
