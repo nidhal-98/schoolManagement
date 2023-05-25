@@ -22,7 +22,15 @@ public class StudentCourseServices {
         return studentCourseRepository.findById(id).get();
     }
 
+    public void deleteStudentCourseById(Long id){
+        studentCourseRepository.deleteById(id);
+    }
+
     public void registerStudentCourse(StudentCourse studentCourse){
         studentCourseRepository.save(studentCourse);
+    }
+
+    public StudentCourse saveStudentCourse(StudentCourse studentCourse){
+        return studentCourseRepository.save(studentCourse);
     }
 }
