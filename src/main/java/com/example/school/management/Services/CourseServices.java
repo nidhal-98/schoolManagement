@@ -18,6 +18,10 @@ public class CourseServices {
         return courseRepository.findAll();
     }
 
+    public List<Course> Active(){
+        return courseRepository.findAllByisActive(true);
+    }
+
     public Course getCourseById(Long id){
         return courseRepository.findById(id).get();
     }

@@ -32,6 +32,11 @@ public class CourseControllers {
          */
     }
 
+    @GetMapping("/getAllCoursesActive")
+    public List<Course> getAllCoursesActive(){
+        return courseServices.Active();
+    }
+
     @GetMapping("/courseBy/{id}")
     public Course getCourseById(@PathVariable("id") Long id){
 

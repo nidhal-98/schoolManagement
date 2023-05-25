@@ -3,6 +3,7 @@ package com.example.school.management.Models;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.List;
 
 @Setter
@@ -22,6 +23,10 @@ public class Course {
     String description;
 
     String courseCode;
+
+    Date createdDate;
+    Boolean isActive;
+    Date updatedDate;
 
     @OneToOne
     @JoinColumn(name = "teacher_id")
