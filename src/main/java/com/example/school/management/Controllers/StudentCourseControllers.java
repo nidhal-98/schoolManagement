@@ -1,5 +1,6 @@
 package com.example.school.management.Controllers;
 
+import com.example.school.management.Models.Course;
 import com.example.school.management.Models.StudentCourse;
 import com.example.school.management.Services.StudentCourseServices;
 import lombok.AllArgsConstructor;
@@ -32,5 +33,16 @@ public class StudentCourseControllers {
     @GetMapping("/StudentCourseBy/{id}")
     public StudentCourse getStudentCourseById(@PathVariable("id") Long id){
         return studentCourseServices.getStudentCourseById(id);
+    }
+
+    @PutMapping("/updateStudentCourse/{id}")
+    public String updateStudentCourse(@PathVariable Long id, @RequestBody StudentCourse updatedStudentCourse){
+
+        StudentCourse studentCourse = studentCourseServices.getStudentCourseById(id);
+        studentCourse.setGarde(updatedStudentCourse.getGarde());
+
+        studentCourseServices.saveStudentCourse(studentCourse);
+
+        return "Updated Successfully";
     }
 }
