@@ -21,6 +21,8 @@ public class Course {
     String name;
     String description;
 
+    String courseCode;
+
     @OneToOne
     @JoinColumn(name = "teacher_id")
     Teacher teacher;

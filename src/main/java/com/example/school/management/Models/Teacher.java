@@ -20,6 +20,10 @@ public class Teacher {
     String name;
     String specialization;
 
+    Long phoneNumber;
+
+    Integer age;
+
     @OneToOne
     @JoinColumn(name = "course_id")
     Course course;

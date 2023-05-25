@@ -24,6 +24,8 @@ public class Student {
     String gender;
     Integer age;
 
+    String email;
+
     @OneToMany(mappedBy = "Id")
     List<StudentCourse> studentCourses;
 }

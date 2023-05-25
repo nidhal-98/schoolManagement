@@ -20,6 +20,8 @@ public class ClassRoom {
 
     Integer size;
 
+    String classCode;
+
     @OneToMany(mappedBy = "courseID")
     List<Course> courses;
 }
