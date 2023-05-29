@@ -57,6 +57,11 @@ public class StudentControllers {
         return responses;
     }
 
+    @GetMapping("/getAllStudentsActive")
+    public List<Student> getAllStudentsActive(){
+        return studentServices.Active();
+    }
+
     /*@GetMapping("/getAllStudentsActive")
     public List<Student> getAllStudentsActive(){
         return studentServices.getAllStudentsActive();
