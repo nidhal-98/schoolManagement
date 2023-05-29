@@ -1,5 +1,6 @@
 package com.example.school.management.Services;
 
+import com.example.school.management.Models.Course;
 import com.example.school.management.Models.Student;
 import com.example.school.management.Repositories.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,10 @@ public class StudentServices {
     /*public List<Student> getAllStudentsActive(){
         return studentRepository.findAllByisActive(true);
     }*/
+
+    public List<Student> Active(){
+        return studentRepository.findAllByisActive(true);
+    }
 
     public Student getStudentById(Long id){
         return studentRepository.findById(id).get();
