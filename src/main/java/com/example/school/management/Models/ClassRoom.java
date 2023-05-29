@@ -3,6 +3,7 @@ package com.example.school.management.Models;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.List;
 
 @Setter
@@ -21,6 +22,10 @@ public class ClassRoom {
     Integer size;
 
     String classCode;
+
+    Date createdDate;
+    Boolean isActive;
+    Date updatedDate;
 
     @OneToMany(mappedBy = "classRoom")
     List<Course> courses;
