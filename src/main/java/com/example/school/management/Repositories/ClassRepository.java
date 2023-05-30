@@ -10,6 +10,5 @@ import java.util.List;
 @Repository
 public interface ClassRepository extends JpaRepository<ClassRoom, Long> {
 
-    List<Class> findAllByisActive(boolean active);
-
+    List<ClassRoom> findAllByisActive(boolean active);
 }

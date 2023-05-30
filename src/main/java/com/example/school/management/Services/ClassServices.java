@@ -1,6 +1,7 @@
 package com.example.school.management.Services;
 
 import com.example.school.management.Models.ClassRoom;
+import com.example.school.management.Models.Course;
 import com.example.school.management.Models.Student;
 import com.example.school.management.Repositories.ClassRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,10 @@ public class ClassServices {
 
     public List<ClassRoom> getAllClass(){
         return classRepository.findAll();
+    }
+
+    public List<ClassRoom> Active(){
+        return classRepository.findAllByisActive(true);
     }
 
     public ClassRoom getClassById(Long id){

@@ -1,6 +1,7 @@
 package com.example.school.management.Controllers;
 
 import com.example.school.management.Models.ClassRoom;
+import com.example.school.management.Models.Course;
 import com.example.school.management.Models.Student;
 import com.example.school.management.Services.ClassServices;
 import lombok.AllArgsConstructor;
@@ -28,6 +29,11 @@ public class ClassControllers {
     @GetMapping("/getAllClasses")
     public List<ClassRoom> getAllClasses(){
         return classServices.getAllClass();
+    }
+
+    @GetMapping("/getAllCoursesActive")
+    public List<ClassRoom> getAllCoursesActive(){
+        return classServices.Active();
     }
 
     @GetMapping("/classBy/{id}")
