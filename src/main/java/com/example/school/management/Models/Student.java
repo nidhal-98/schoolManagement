@@ -2,7 +2,7 @@ package com.example.school.management.Models;
 
 import lombok.*;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
@@ -19,17 +19,28 @@ public class Student {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long studentID;
+    private Long studentID;
 
-    String name;
-    String gender;
-    Integer age;
+    @Column(nullable = false)
+    private String name;
 
-    String email;
+    @Column(nullable = false)
+    private String gender;
 
-    Date createdDate;
-    Boolean isActive;
-    Date updatedDate;
+    @Column(nullable = false)
+    private Integer age;
+
+    @Column(nullable = false)
+    private String email;
+
+    @Column(nullable = false)
+    private Date createdDate;
+
+    @Column(nullable = false)
+    private Boolean isActive;
+
+    @Column
+    private Date updatedDate;
 
     @OneToMany(mappedBy = "student")
     List<StudentCourse> studentCourses;

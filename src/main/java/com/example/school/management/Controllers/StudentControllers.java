@@ -6,11 +6,14 @@ import com.example.school.management.Requests.AddStudentRequest;
 import com.example.school.management.Responses.AddStudentResponse;
 import com.example.school.management.Services.StudentServices;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -20,10 +23,11 @@ import java.util.List;
 public class StudentControllers {
 
     @Autowired
-    StudentServices studentServices;
+    private StudentServices studentServices;
 
     @PostMapping("/register")
     public String registerStudent(@RequestBody Student student) {
+        student.setCreatedDate(new Date());
         studentServices.registerStudent(student);
         return "Student is added";
     }
